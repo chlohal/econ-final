@@ -1,0 +1,95 @@
+.quote-carousel--parent {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-rotator {
+    transform: rotate(-4.5deg);
+    padding: 1.5em 0 2em 0;
+}
+
+#quote-carousel {
+    display: flex;
+
+    list-style-type: none;
+    padding: 0;
+
+    margin: 0;
+}
+
+#quote-carousel li {
+    padding: 1em;
+    margin: 0;
+    margin-right: 2.125em;
+    max-width: 80vw;
+    width: 80ch;
+    flex-shrink: 0;
+
+    border-radius: 0.5em;
+
+    background: #fcfff0;
+
+    position: relative;
+    z-index: 0;
+}
+
+#quote-carousel li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background: inherit;
+    z-index: 0;
+    border-radius: inherit;
+}
+
+#quote-carousel li::after {
+    content: "";
+    position: absolute;
+
+    top: -0.125em;
+    right: -0.125em;
+    left: -0.5em;
+    bottom: -1em;
+
+    transform: scale(1);
+    transition: transform 0.1s, top 0.1s, left 0.1s;
+
+    background: #52B44B;
+
+    z-index: -1;
+
+    border-radius: inherit;
+    box-shadow: 0 0 .5em 0 #b1afaf;
+}
+
+#quote-carousel li:hover {
+    box-shadow: 0 0 .5em 0 #b1afaf;
+}
+
+#quote-carousel li:hover::after {
+    left: -0.125em;
+    top: 1em;
+    transform: translateX(1em);
+    box-shadow: none;
+}
+
+#quote-carousel figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#quote-carousel figure blockquote {
+    margin: 0;
+    flex-grow: 1;
+}
+
+#quote-carousel figure figcaption {
+    align-self: flex-end;
+}
